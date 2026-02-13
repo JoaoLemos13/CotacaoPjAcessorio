@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotação Atacado | Spartano</title>
+
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/cotacao.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../imgs/faviconSpartano.png" />
+</head>
+
+<body>
+  <!-- Header (mesmo padrão do seu template) -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../imgs/spartano_suplementos.png.png" alt="Spartano" class="logo-img">
+          </a>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="/pages/catalogo.html">Catálogo</a></li>
+            <li><a href="/pages/condicoes.html">Condições</a></li>
+            <li><a href="/pages/cotacao.html">Cotação</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu-toggle" aria-label="Abrir menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-card">
+          <div class="badge">Atacado • Pedido mínimo R$ 100</div>
+          <h1 class="page-title">Solicitar <span class="gradient-text">cotação PJ</span></h1>
+          <p class="page-subtitle">Preencha os dados da empresa e informe as quantidades desejadas por item. Você receberá a cotação por e-mail.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-content">
+      <div class="container">
+        <div class="form-card">
+          <form
+            id="cotacaoForm"
+            action="https://formspree.io/f/xzdaevvo";
+            method="POST"
+          >
+            <input type="hidden" name="tipo" value="Cotação Atacado - Spartano" />
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="empresa">Empresa / Razão social</label>
+                <input id="empresa" name="empresa" required autocomplete="organization" />
+              </div>
+
+              <div class="field">
+                <label for="cnpj">CNPJ</label>
+                <input id="cnpj" name="cnpj" required inputmode="numeric" placeholder="00.000.000/0000-00" />
+              </div>
+
+              <div class="field">
+                <label for="responsavel">Nome do responsável</label>
+                <input id="responsavel" name="responsavel" required autocomplete="name" />
+              </div>
+
+              <div class="field">
+                <label for="cargo">Cargo</label>
+                <input id="cargo" name="cargo" placeholder="Compras, dono(a), gerente..." />
+              </div>
+
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" required autocomplete="email" />
+              </div>
+
+              <div class="field">
+                <label for="whatsapp">WhatsApp</label>
+                <input id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="(11) 90000-0000" />
+              </div>
+
+              <div class="field">
+                <label for="cidade">Cidade</label>
+                <input id="cidade" name="cidade" required />
+              </div>
+
+              <div class="field">
+                <label for="uf">UF</label>
+                <select id="uf" name="uf" required>
+                  <option value="" selected disabled>Selecione</option>
+                  <option>SP</option><option>RJ</option><option>MG</option><option>PR</option><option>SC</option><option>RS</option>
+                  <option>ES</option><option>BA</option><option>PE</option><option>CE</option><option>GO</option><option>DF</option>
+                  <option>PA</option><option>AM</option><option>MA</option><option>PB</option><option>RN</option><option>AL</option>
+                  <option>SE</option><option>PI</option><option>MT</option><option>MS</option><option>RO</option><option>RR</option>
+                  <option>TO</option><option>AP</option><option>AC</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="cep">CEP</label>
+                <input id="cep" name="cep" required inputmode="numeric" placeholder="00000-000" />
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="items-header">
+              <h2 class="items-title">Itens e quantidades</h2>
+              <p class="items-subtitle">Preencha com 0 se não tiver interesse no item.</p>
+            </div>
+
+            <div class="items-grid">
+              <!-- Cada item: nome + quantidade -->
+              <div class="item-row">
+                <div class="item-name">Par de Tala Strap Simples</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_tala_strap_simples" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Munhequeira Elástica</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_munhequeira_elastica" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Faixa de Joelho</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_faixa_joelho" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Ultra Band</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_ultra_band" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Hand Grip</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_hand_grip" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Corda de Pular</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_corda_pular" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Creatina Spartano</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_creatina_spartano" value="0" />
+              </div>
+
+              <div class="item-row">
+                <div class="item-name">Strap Canelado</div>
+                <input class="qty" type="number" min="0" step="1" name="qtd_strap_canelado" value="0" />
+              </div>
+            </div>
+
+            <div class="field mt-16">
+              <label for="obs">Observações</label>
+              <textarea id="obs" name="observacoes" rows="4" placeholder="Prazo, preferências, cores, dúvidas..."></textarea>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-outline" type="reset">Limpar</button>
+              <button class="btn btn-primary" type="submit">Enviar cotação</button>
+            </div>
+
+            <p class="form-note">
+              Ao enviar, você concorda em ser contatado para retorno da cotação.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Spartano. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/menu-mobile.js"></script>
+</body>
+</html>

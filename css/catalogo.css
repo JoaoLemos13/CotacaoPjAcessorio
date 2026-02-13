@@ -1,0 +1,174 @@
+/* assets/css/catalogo.css */
+
+.page{ padding-top: 70px; }
+
+/* HERO DA PÁGINA */
+.page-hero{
+  background: var(--gradient-hero);
+  padding: 2.5rem 0 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-card{
+  border-radius: 16px;
+  padding: 2rem;
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
+}
+
+.page-title{ margin: .75rem 0; }
+
+.page-subtitle{
+  opacity: .9;
+  max-width: 75ch;
+}
+
+.hero-actions{
+  margin-top: 1.25rem;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+/* TOOLBAR */
+.toolbar{
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.section-title{
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.section-subtitle{
+  margin: .25rem 0 0;
+  color: var(--gray-600);
+}
+
+/* GRID DE CARDS */
+.grid{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.product-media img{
+  aspect-ratio: auto;
+  height: 160px; /* teste 140–180px */
+}
+
+
+
+/* CARD */
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255,102,0,.35);
+}
+
+.card-top{ display: grid; gap: .65rem; }
+
+.card-title{
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  color: var(--gray-900);
+}
+
+.card-desc{
+  margin: 0;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.card-bottom{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* CHIP (TAG) */
+.chip{
+  display: inline-flex;
+  width: fit-content;
+  padding: .35rem .65rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .75rem;
+
+  color: var(--primary-color);
+  background: rgba(255,102,0,.10);
+  border: 1px solid rgba(255,102,0,.18);
+}
+
+/* BOTÃO PEQUENO */
+.btn-small{
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: .95rem;
+}
+
+/* CTA FINAL */
+.catalog-cta{
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+
+  background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
+  border: 1px solid var(--gray-200);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.catalog-cta-text{
+  color: var(--gray-800);
+  font-weight: 600;
+  max-width: 70ch;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1100px){
+  .grid{ grid-template-columns: repeat(3, minmax(0, 1fr));
+justify-content: center; }
+}
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px){
+  .grid{ grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 360px); /* largura máxima do card no mobile */
+    justify-content: center; }
+  .hero-actions .btn{ width: 100%; }
+  .catalog-cta .btn{ width: 100%; }
+
+}
