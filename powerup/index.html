@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Spartano Power-Up</title>
+  </head>
+  <body>
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    <script>
+      var Promise = TrelloPowerUp.Promise;
+
+      // Aqui você registra as capacidades do seu Power-Up
+      TrelloPowerUp.initialize({
+        'card-buttons': function(t, options) {
+          return [{
+            icon: 'https://cotacao-pj-acessorio.onrender.com/assets/icon.png', // opcional
+            text: 'Spartano',
+            callback: function(t) {
+              // Exemplo simples: só mostra um alert
+              return t.alert({ message: 'Power-Up carregado!' });
+            }
+          }];
+        }
+      });
+    </script>
+  </body>
+</html>
